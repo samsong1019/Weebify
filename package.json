@@ -1,7 +1,7 @@
 {
-  "name": "googlebooks-app",
+  "name": "weebify-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Weebify is an eCommerce platform designed to offer shoppers a wide selection of anime themed products.",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
@@ -12,7 +12,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.8.0",
+    "mongoose": "^6.7.5"
+  },
   "devDependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^5.1.0",
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.20"
   }
 }
