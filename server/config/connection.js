@@ -1,10 +1,9 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googlebooks', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-});
+const connectDB = async () => {
+  const conn = await mongoose.connect(process.env.MONGO_URI);
 
-module.exports = mongoose.connection;
+  console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline.bold);
+};
+
+module.exports = connectDB;
