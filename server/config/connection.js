@@ -1,3 +1,4 @@
+// Setting up connection to Mongo Atlas DB
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
