@@ -1,4 +1,5 @@
-const User = require("../models/User");
+const User = require("../models/User")
+const Product = require("../models/Product")
 
 const {
   GraphQLObjectType,
@@ -8,8 +9,12 @@ const {
   GraphQLList,
   GraphQLBoolean,
   GraphQLNonNull,
+  GraphQLInt,
 } = require("graphql");
 
+// Data Object Types
+
+// User
 const UserType = new GraphQLObjectType({
   name: "User",
   fields: () => ({
@@ -22,17 +27,42 @@ const UserType = new GraphQLObjectType({
   }),
 });
 
+// Product
+const ProductType = new GraphQLObjectType({
+  name: "Product",
+  fields: () => ({
+    _id: { type: GraphQLID },
+    title: { type: GraphQLString },
+    description: { type: GraphQLString },
+    image: { type: GraphQLString },
+    price: { type: GraphQLInt },
+    inStock: { type: GraphQLBoolean },
+  }),
+});
+
+// Queries
+
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
   fields: {
+    // Query all users
     users: {
       type: new GraphQLList(UserType),
       resolve(parent, args) {
         return User.find();
       },
     },
+    // Query all products
+    products: {
+      type: new GraphQLList(ProductType),
+      resolve(parent, args) {
+        return Product.find();
+      },
+    },
   },
 });
+
+// Mutations
 
 const RootMutation = new GraphQLObjectType({
   name: "RootMutationType",
