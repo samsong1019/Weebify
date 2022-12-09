@@ -45,6 +45,14 @@ const ProductType = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
   fields: {
+    // Query one user by _id
+    user: {
+      type: UserType,
+      args: { _id: { type: GraphQLID } },
+      resolve(parent, args) {
+        return User.findById(args._id);
+      },
+    },
     // Query all users
     users: {
       type: new GraphQLList(UserType),
