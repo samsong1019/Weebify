@@ -1,5 +1,5 @@
-const User = require("../models/User")
-const Product = require("../models/Product")
+const User = require("../models/User");
+const Product = require("../models/Product");
 
 const {
   GraphQLObjectType,
@@ -58,6 +58,14 @@ const RootQuery = new GraphQLObjectType({
       type: new GraphQLList(UserType),
       resolve(parent, args) {
         return User.find();
+      },
+    },
+    // Query one product by _id
+    product: {
+      type: ProductType,
+      args: { _id: { type: GraphQLID } },
+      resolve(parent, args) {
+        return Product.findById(args._id);
       },
     },
     // Query all products
