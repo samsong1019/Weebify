@@ -107,6 +107,28 @@ const RootMutation = new GraphQLObjectType({
         return user.save();
       },
     },
+    // Add new product
+    addProduct: {
+      type: ProductType,
+      args: {
+        title: { type: GraphQLNonNull(GraphQLString) },
+        description: { type: GraphQLNonNull(GraphQLString) },
+        image: { type: GraphQLString },
+        price: { type: GraphQLNonNull(GraphQLInt) },
+        inStock: { type: GraphQLBoolean },
+      },
+      resolve(parent, args) {
+        const product = new Product({
+          title: args.title,
+          description: args.description,
+          image: args.image,
+          price: args.price,
+          inStock: args.inStock,
+        });
+
+        return product.save();
+      },
+    },
   },
 });
 
