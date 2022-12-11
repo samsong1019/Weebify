@@ -67,7 +67,7 @@ export default function Navbar() {
           <Language>EN</Language>
           <SearchContainer>
             <Input />
-            <Search style={{color:"gray", fontSize: 26}}/>
+            <Search style={{ color: "gray", fontSize: 26 }} />
           </SearchContainer>
         </Left>
         <Center>
