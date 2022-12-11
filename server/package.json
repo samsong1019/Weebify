@@ -2,21 +2,24 @@
   "name": "weebify-app",
   "version": "1.0.0",
   "description": "Weebify is an eCommerce platform designed to offer shoppers a wide selection of anime themed products.",
-  "main": "server/server.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server/server.js",
-    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-    "install": "cd server && npm i && cd ../client && npm i",
-    "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build"
+    "watch": "nodemon",
+    "seed": "node config/seeds.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.0.3"
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.8.0",
+    "mongoose": "^6.7.5"
   },
   "devDependencies": {
-    "concurrently": "^5.1.0"
+    "nodemon": "^2.0.20"
   }
 }
