@@ -4,7 +4,8 @@ import { Badge } from "@material-ui/core";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 
 const Container = styled.div`
-  height: 60px;
+  height: 80px;
+  background: lightgray;
 `;
 
 const Wrapper = styled.div`
@@ -20,9 +21,9 @@ const Left = styled.div`
   align-items: center;
 `;
 
-const Language = styled.span`
-  font-size: 14px;
-  cursor: pointer;
+const SearchText = styled.h3`
+  font-size: 22px;
+  font-weight: 500;
 `;
 
 const SearchContainer = styled.div`
@@ -64,7 +65,7 @@ export default function Navbar() {
     <Container>
       <Wrapper>
         <Left>
-          <Language>EN</Language>
+          <SearchText>Search</SearchText>
           <SearchContainer>
             <Input />
             <Search style={{ color: "gray", fontSize: 26 }} />

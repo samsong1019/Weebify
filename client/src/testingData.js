@@ -26,21 +26,40 @@ export const sliderItems = [
   },
 ];
 
-
 export const categories = [
   {
     id: 1,
-    image: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    title: "SHIRT STYLE!",
+    image: "https://via.placeholder.com/500",
+    title: "Funko",
   },
   {
     id: 2,
-    image: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    title: "LOUNGEWEAR LOVE",
+    image: "https://via.placeholder.com/500",
+    title: "Clothing",
   },
   {
     id: 3,
-    image: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    title: "LIGHT JACKETS",
+    image: "https://via.placeholder.com/500",
+    title: "Figurines",
+  },
+  {
+    id: 4,
+    image: "https://via.placeholder.com/500",
+    title: "Plushies",
+  },
+  {
+    id: 5,
+    image: "https://via.placeholder.com/500",
+    title: "Posters",
+  },
+  {
+    id: 5,
+    image: "https://via.placeholder.com/500",
+    title: "Bundles",
+  },
+  {
+    id: 6,
+    image: "https://via.placeholder.com/500",
+    title: "SALE",
   },
 ];
