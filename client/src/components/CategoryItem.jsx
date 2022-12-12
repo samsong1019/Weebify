@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const Container = styled.div`
   flex: 1;
-  margin: 10px;
-  height: 60vh;
+  margin: 5px;
+  height: 30vh;
   position: relative;
 `;
 const Image = styled.img`

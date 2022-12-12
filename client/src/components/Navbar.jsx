@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { Badge } from "@material-ui/core";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 
 const Container = styled.div`
-  height: 80px;
+  height: 12vh;
   background: lightgray;
 `;
 
@@ -78,9 +77,7 @@ export default function Navbar() {
           <MenuItem>Sign-Up</MenuItem>
           <MenuItem>Login</MenuItem>
           <MenuItem>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlined />
-            </Badge>
+            <ShoppingCartOutlined />
           </MenuItem>
         </Right>
       </Wrapper>

@@ -6,7 +6,7 @@ import { GET_CATEGORIES } from "../queries/categoryQueries";
 
 const Container = styled.div`
   display: flex;
-  padding: 20px;
+  padding: 5px;
   justify-content: space-between;
 `;
 
