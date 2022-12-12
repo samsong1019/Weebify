@@ -4,6 +4,7 @@ import Categories from "../components/Categories";
 import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
 import RandomProductsShowcase from "../components/RandomProductsShowcase";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Categories />
       <Slider />
       <RandomProductsShowcase />
+      <Footer />
     </div>
   );
 }
