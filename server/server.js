@@ -8,6 +8,10 @@ const port = process.env.PORT || 5000;
 
 const app = express();
 
+// CORS
+const cors = require("cors");
+app.use(cors());
+
 // Connect to database
 connectDB();
 

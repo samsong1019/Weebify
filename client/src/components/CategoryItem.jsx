@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const Container = styled.div`
   flex: 1;
-  margin: 10px;
-  height: 60vh;
+  margin: 5px;
+  height: 30vh;
   position: relative;
 `;
 const Image = styled.img`
@@ -36,12 +36,12 @@ const Button = styled.button`
   font-weight: 500;
 `;
 
-export default function CategoryItem({ item }) {
+export default function CategoryItem({ categories }) {
   return (
     <Container>
-      <Image src={item.image} />
+      <Image src={categories.image} />
       <Info>
-        <Title>{item.title}</Title>
+        <Title>{categories.title}</Title>
         <Button>Shop Now</Button>
       </Info>
     </Container>

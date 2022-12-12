@@ -3,16 +3,16 @@ import Announcement from "../components/Announcement";
 import Categories from "../components/Categories";
 import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
-import AllProducts from "../components/AllProducts";
+import RandomProductsShowcase from "../components/RandomProductsShowcase";
 
 export default function Home() {
   return (
     <div>
       <Announcement />
       <Navbar />
-      <Slider />
       <Categories />
-      <AllProducts />
+      <Slider />
+      <RandomProductsShowcase />
     </div>
   );
 }

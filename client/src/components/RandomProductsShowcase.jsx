@@ -10,7 +10,7 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-export default function AllProducts() {
+export default function RandomProductsShowcase() {
   return (
     <Container>
       {popularProducts.map((item) => (
