@@ -36,12 +36,12 @@ const Button = styled.button`
   font-weight: 500;
 `;
 
-export default function CategoryItem({ item }) {
+export default function CategoryItem({ categories }) {
   return (
     <Container>
-      <Image src={item.image} />
+      <Image src={categories.image} />
       <Info>
-        <Title>{item.title}</Title>
+        <Title>{categories.title}</Title>
         <Button>Shop Now</Button>
       </Info>
     </Container>

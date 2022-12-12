@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const Product = require("../models/Product");
+const Category = require("../models/Category");
 
 const {
   GraphQLObjectType,
@@ -40,6 +41,16 @@ const ProductType = new GraphQLObjectType({
   }),
 });
 
+// Product
+const CategoryType = new GraphQLObjectType({
+  name: "Category",
+  fields: () => ({
+    _id: { type: GraphQLID },
+    image: { type: GraphQLString },
+    title: { type: GraphQLString },
+  }),
+});
+
 // Queries
 
 const RootQuery = new GraphQLObjectType({
@@ -73,6 +84,21 @@ const RootQuery = new GraphQLObjectType({
       type: new GraphQLList(ProductType),
       resolve(parent, args) {
         return Product.find();
+      },
+    },
+    // Query one product by _id
+    category: {
+      type: CategoryType,
+      args: { _id: { type: GraphQLID } },
+      resolve(parent, args) {
+        return Category.findById(args._id);
+      },
+    },
+    // Query all products
+    categories: {
+      type: new GraphQLList(ProductType),
+      resolve(parent, args) {
+        return Category.find();
       },
     },
   },
@@ -127,6 +153,22 @@ const RootMutation = new GraphQLObjectType({
         });
 
         return product.save();
+      },
+    },
+    // Add new product
+    addCategory: {
+      type: CategoryType,
+      args: {
+        title: { type: GraphQLNonNull(GraphQLString) },
+        image: { type: GraphQLString },
+      },
+      resolve(parent, args) {
+        const category = new Category({
+          title: args.title,
+          image: args.image,
+        });
+
+        return category.save();
       },
     },
   },
