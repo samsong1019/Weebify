@@ -13,9 +13,7 @@ module.exports = () => {
     entry: {
       main: './src/js/index.js',
       install: './src/js/install.js',
-      database: './src/js/database.js',
-      editor: './src/js/editor.js',
-      header: './src/js/header.js',
+      database: './src/database.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -24,8 +22,8 @@ module.exports = () => {
     plugins: [
       // Webpack plugin that generates our html file and injects our bundles
       new HtmlWebpackPlugin({
-        template: './index.html',
-        title: 'JATE'
+        template: '.public/index.html',
+        title: 'WEEBIFY'
       }),
       // Injects our custom servie worker
       new InjectManifest({
@@ -36,9 +34,9 @@ module.exports = () => {
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'Just Another Text Editor',
-        short_name: 'JATE',
-        description: 'Just another text editor',
+        name: 'Weebify',
+        short_name: 'WEEBIFY',
+        description: 'WEEBIFY',
         background_color: '#225ca3',
         theme_color: '#225ca3',
         start_url: '/',
