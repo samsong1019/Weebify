@@ -17,7 +17,13 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "^4.0.2",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "web-vitals": "^3.1.0",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0",
+    "webpack-pwa-manifest": "^4.3.0",
+    "workbox-webpack-plugin": "^6.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
