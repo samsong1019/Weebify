@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import ProductList from "./pages/ProductList";
 
 const client = new ApolloClient({
   uri: "http://localhost:5000/graphql",
@@ -17,6 +18,7 @@ function App() {
           <div>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/products" element={<ProductList />} />
               <Route path="/login" element={<Login />} />
             </Routes>
           </div>

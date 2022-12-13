@@ -3,7 +3,7 @@ import Announcement from "../components/Announcement";
 import Categories from "../components/Categories";
 import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
-import RandomProductsShowcase from "../components/RandomProductsShowcase";
+import Products from "../components/Products";
 import Footer from "../components/Footer";
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
       <Navbar />
       <Categories />
       <Slider />
-      <RandomProductsShowcase />
+      <Products />
       <Footer />
     </div>
   );
