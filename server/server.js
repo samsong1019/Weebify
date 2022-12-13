@@ -10,10 +10,11 @@ const app = express();
 
 // CORS
 const cors = require("cors");
+const { default: mongoose } = require("mongoose");
 app.use(cors());
 
 // Connect to database
-connectDB();
+mongoose.connection;
 
 app.use(
   "/graphql",
