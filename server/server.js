@@ -3,7 +3,7 @@ const colors = require("colors");
 require("dotenv").config();
 const { graphqlHTTP } = require("express-graphql");
 const schema = require("./schema/schema");
-const connectDB = require("./config/connection");
+const db = require("./config/connection");
 const port = process.env.PORT || 5000;
 
 const app = express();
@@ -13,9 +13,6 @@ const cors = require("cors");
 const { default: mongoose } = require("mongoose");
 app.use(cors());
 
-// Connect to database
-mongoose.connection;
-
 app.use(
   "/graphql",
   graphqlHTTP({
@@ -24,4 +21,7 @@ app.use(
   })
 );
 
-app.listen(port, console.log(`Server running on port ${port}`));
+//Connect to database
+db.once("open", () => {
+  app.listen(port, console.log(`Server running on port ${port}`));
+});
