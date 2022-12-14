@@ -60,7 +60,7 @@ const Icon = styled.div`
   transition: all 0.5s ease;
 `;
 
-export default function SingleProduct({ item }) {
+export default function Product({ item }) {
   return (
     <Container>
       <Circle />

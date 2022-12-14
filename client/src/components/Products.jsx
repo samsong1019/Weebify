@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { popularProducts } from "../testingData";
-import SingleProduct from "./SingleProduct";
+import Product from "./Product"
 
 const Container = styled.div`
   padding: 20px;
@@ -10,11 +10,11 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-export default function RandomProductsShowcase() {
+export default function Products() {
   return (
     <Container>
       {popularProducts.map((item) => (
-        <SingleProduct item={item} key={item.id} />
+        <Product item={item} key={item.id} />
       ))}
     </Container>
   );
