@@ -78,7 +78,6 @@ export default function Product() {
   return (
     <Container>
       <Navbar />
-      <Announcement />
       <Wrapper>
         <ImageContainer>
           <Image src="https://cdn.pixabay.com/photo/2017/09/25/13/12/puppy-2785074__340.jpg" />

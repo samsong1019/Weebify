@@ -37,7 +37,6 @@ export default function ProductList() {
   return (
     <Container>
       <Navbar />
-      <Announcement />
       <Title>All Products</Title>
       <FilterContainer>
         <Filter>

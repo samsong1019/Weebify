@@ -140,7 +140,6 @@ export default function Cart() {
   return (
     <Container>
       <Navbar />
-      <Announcement />
       <Wrapper>
         <Title>Your Cart</Title>
         <Top>
