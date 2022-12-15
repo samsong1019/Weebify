@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  FavoriteBorderOutlined,
-  SearchOutlined,
-  ShoppingCartOutlined,
-} from "@material-ui/icons";
+import { SearchOutlined, ShoppingCartOutlined } from "@material-ui/icons";
 
 const Info = styled.div`
   opacity: 0;
@@ -15,6 +11,7 @@ const Info = styled.div`
   left: 0;
   z-index: 3;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -35,23 +32,15 @@ const Container = styled.div`
   }
 `;
 
-const Circle = styled.div`
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: white;
-  position: absolute;
-`;
-
 const Image = styled.img`
   height: 75%;
   z-index: 2;
 `;
 
 const Icon = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: 100px;
+  height: 50px;
+  border-radius: 10%;
   background-color: white;
   display: flex;
   align-items: center;
@@ -60,11 +49,10 @@ const Icon = styled.div`
   transition: all 0.5s ease;
 `;
 
-export default function Product({ item }) {
+export default function Product({ products }) {
   return (
     <Container>
-      <Circle />
-      <Image src={item.image} />
+      <Image src={products.image} />
       <Info>
         <Icon>
           <ShoppingCartOutlined />
@@ -73,7 +61,7 @@ export default function Product({ item }) {
           <SearchOutlined />
         </Icon>
         <Icon>
-          <FavoriteBorderOutlined />
+          <Icon>${products.price}.00</Icon>
         </Icon>
       </Info>
     </Container>

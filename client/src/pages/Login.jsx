@@ -54,7 +54,9 @@ export default function Login() {
   return (
     <Container>
       <Wrapper>
-        <Title>Account Login</Title>
+        <Title>
+          <b>Account Login</b>
+        </Title>
         <Form>
           <Input placeholder="username" />
           <Input placeholder="password" />

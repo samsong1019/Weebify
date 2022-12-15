@@ -24,6 +24,8 @@ const Title = styled.h1`
 const Form = styled.form`
   display: flex;
   flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Input = styled.input`
@@ -51,14 +53,15 @@ export default function Signup() {
   return (
     <Container>
       <Wrapper>
-        <Title>Create Account</Title>
+        <Title>
+          <b>Weebify Account Creation</b>
+        </Title>
         <Form>
           <Input placeholder="username" />
           <Input placeholder="first name" />
           <Input placeholder="last name" />
           <Input placeholder="email" />
           <Input placeholder="password" />
-          <Input placeholder="confirm password" />
           <Agreement>
             By creating this account you agree to our privacy policy
           </Agreement>
