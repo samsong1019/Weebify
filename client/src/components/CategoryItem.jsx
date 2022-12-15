@@ -11,6 +11,7 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0.3;
 `;
 const Info = styled.div`
   position: absolute;
@@ -24,16 +25,19 @@ const Info = styled.div`
   justify-content: center;
 `;
 const Title = styled.h1`
-  color: white;
+  color: black;
+  font-size: 45px;
+  font-weight: 600;
   margin: 20px;
 `;
 const Button = styled.button`
   border: none;
   padding: 10px;
   background-color: white;
-  color: gray;
+  border: 1px solid black;
+  color: black;
+  font-weight: 600;
   cursor: pointer;
-  font-weight: 500;
 `;
 
 export default function CategoryItem({ categories }) {

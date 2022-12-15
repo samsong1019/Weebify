@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -23,8 +24,6 @@ const Title = styled.h1`
 
 const Form = styled.form`
   display: flex;
-  flex-wrap: wrap;
-  display: flex;
   flex-direction: column;
 `;
 
@@ -47,6 +46,7 @@ const Button = styled.button`
   background-color: crimson;
   color: white;
   cursor: pointer;
+  margin-bottom: 12px;
 `;
 
 export default function Signup() {
@@ -67,6 +67,8 @@ export default function Signup() {
           </Agreement>
         </Form>
         <Button>Create</Button>
+        <br></br>
+        <Link to="/">Homepage</Link>
       </Wrapper>
     </Container>
   );

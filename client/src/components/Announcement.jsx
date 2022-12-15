@@ -15,7 +15,7 @@ const Container = styled.div`
 export default function Announcement() {
   return (
     <Container>
-      Holiday Savings! Free Priority Shipping on Orders Over $75
+      🎄🎄 Holiday Savings! Free Priority Shipping on Orders Over $75.00 🎄🎄
     </Container>
   );
 }

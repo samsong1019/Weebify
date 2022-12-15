@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
-import {mobile} from "../responsive"
+import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 12vh;
   background: lightgray;
-  ${mobile({ height: "50px"})}
+  ${mobile({ height: "50px" })}
 `;
 
 const Wrapper = styled.div`
@@ -76,8 +77,12 @@ export default function Navbar() {
           <Logo>Weebify</Logo>
         </Center>
         <Right>
-          <MenuItem>Sign-Up</MenuItem>
-          <MenuItem>Login</MenuItem>
+          <Link to="/signup">
+            <MenuItem>Sign-Up</MenuItem>
+          </Link>
+          <Link to="/login">
+            <MenuItem>Login</MenuItem>
+          </Link>
           <MenuItem>
             <ShoppingCartOutlined />
           </MenuItem>
