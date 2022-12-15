@@ -1,5 +1,17 @@
 import { gql } from "@apollo/client";
 
+const GET_PRODUCT = gql`
+  {
+    product {
+      title
+      description
+      image
+      price
+      inStock
+    }
+  }
+`;
+
 const GET_PRODUCTS = gql`
   {
     products {
@@ -12,4 +24,4 @@ const GET_PRODUCTS = gql`
   }
 `;
 
-export { GET_PRODUCTS };
+export { GET_PRODUCT, GET_PRODUCTS };

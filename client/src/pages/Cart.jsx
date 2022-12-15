@@ -4,7 +4,8 @@ import { Add, Remove } from "@material-ui/icons";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const Container = styled.div``;
+const Container = styled.div`
+`;
 
 const Wrapper = styled.div`
   padding: 20px;
