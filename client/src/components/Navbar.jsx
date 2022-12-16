@@ -1,12 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { Search, ShoppingCartOutlined } from "@material-ui/icons";
-import {mobile} from "../responsive"
+import { ShoppingCartOutlined } from "@material-ui/icons";
+import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 12vh;
-  background: lightgray;
-  ${mobile({ height: "50px"})}
+  background: white;
+  margin-top: 0.5%;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  ${mobile({ height: "50px" })}
 `;
 
 const Wrapper = styled.div`
@@ -22,29 +26,13 @@ const Left = styled.div`
   align-items: center;
 `;
 
-const SearchText = styled.h3`
-  font-size: 22px;
-  font-weight: 500;
-`;
-
-const SearchContainer = styled.div`
-  border: 0.5px solid lightgray;
-  display: flex;
-  align-items: center;
-  margin-left: 25px;
-  padding: 5px;
-`;
-
-const Input = styled.input`
-  border: none;
-`;
-
 const Center = styled.div`
   flex: 1;
   text-align: center;
 `;
 
 const Logo = styled.h1`
+  font-size: 46px;
   font-weight: bold;
 `;
 
@@ -65,22 +53,22 @@ export default function Navbar() {
   return (
     <Container>
       <Wrapper>
-        <Left>
-          <SearchText>Search</SearchText>
-          <SearchContainer>
-            <Input />
-            <Search style={{ color: "gray", fontSize: 26 }} />
-          </SearchContainer>
-        </Left>
+        <Left></Left>
         <Center>
           <Logo>Weebify</Logo>
         </Center>
         <Right>
-          <MenuItem>Sign-Up</MenuItem>
-          <MenuItem>Login</MenuItem>
-          <MenuItem>
-            <ShoppingCartOutlined />
-          </MenuItem>
+          <Link to="/signup">
+            <MenuItem>Sign-Up</MenuItem>
+          </Link>
+          <Link to="/login">
+            <MenuItem>Login</MenuItem>
+          </Link>
+          <Link to="/cart">
+            <MenuItem>
+              <ShoppingCartOutlined />
+            </MenuItem>
+          </Link>
         </Right>
       </Wrapper>
     </Container>

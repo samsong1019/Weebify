@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { popularProducts } from "../testingData";
 import Product from "./Product"
+import { useQuery } from "@apollo/client";
+import { GET_PRODUCTS } from "../queries/productQueries";
 
 const Container = styled.div`
   padding: 20px;
@@ -11,11 +12,20 @@ const Container = styled.div`
 `;
 
 export default function Products() {
+  const { loading, error, data } = useQuery(GET_PRODUCTS);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Something went wrong...</p>;
+
   return (
-    <Container>
-      {popularProducts.map((item) => (
-        <Product item={item} key={item.id} />
-      ))}
-    </Container>
+    <>
+      {!loading && !error && (
+        <Container>
+          {data.products.map((item) => (
+            <Product key={item._id} products={item}/>
+          ))}
+        </Container>
+      )}
+    </>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -23,7 +24,7 @@ const Title = styled.h1`
 
 const Form = styled.form`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 `;
 
 const Input = styled.input`
@@ -45,25 +46,29 @@ const Button = styled.button`
   background-color: crimson;
   color: white;
   cursor: pointer;
+  margin-bottom: 12px;
 `;
 
 export default function Signup() {
   return (
     <Container>
       <Wrapper>
-        <Title>Create Account</Title>
+        <Title>
+          <b>Weebify Account Creation</b>
+        </Title>
         <Form>
           <Input placeholder="username" />
           <Input placeholder="first name" />
           <Input placeholder="last name" />
           <Input placeholder="email" />
           <Input placeholder="password" />
-          <Input placeholder="confirm password" />
           <Agreement>
             By creating this account you agree to our privacy policy
           </Agreement>
         </Form>
         <Button>Create</Button>
+        <br></br>
+        <Link to="/">Homepage</Link>
       </Wrapper>
     </Container>
   );
