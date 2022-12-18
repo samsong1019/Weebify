@@ -12,8 +12,6 @@ import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 const Left = styled.div`
@@ -45,6 +43,8 @@ const SocialIcon = styled.div`
 
 const Center = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
 `;
 
@@ -52,18 +52,13 @@ const Title = styled.h3`
   margin-bottom: 30px;
 `;
 
-const List = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
+const LinkContainer = styled.div`
   display: flex;
 `;
 
-const ListItem = styled.li`
-  margin-left: 80px;
-  width: 50%;
-  margin-bottom: 10px;
+const LinkItem = styled.h4`
   color: black;
+  margin-left: 20px;
 
   :hover {
     font-weight: bold;
@@ -106,15 +101,15 @@ export default function Footer() {
         </SocialContainer>
       </Left>
       <Center>
-        <Title>Useful Links</Title>
-        <List>
+        <Logo>Useful Links</Logo>
+        <LinkContainer>
           <Link to="/" style={{ textDecoration: "none" }}>
-            <ListItem>Home</ListItem>
+            <LinkItem>Home</LinkItem>
           </Link>
           <Link to="/privacy" style={{ textDecoration: "none" }}>
-            <ListItem>Privacy Policy</ListItem>
+            <LinkItem>Privacy Policy</LinkItem>
           </Link>
-        </List>
+        </LinkContainer>
       </Center>
       <Right>
         <Title>Contact Information</Title>

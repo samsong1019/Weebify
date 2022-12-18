@@ -5,10 +5,9 @@ import { Link } from "react-router-dom";
 import Cart from "../Cart";
 
 const Container = styled.div`
-  height: 12vh;
   background: white;
   margin-top: 0.5%;
-  border-bottom: 4px solid black
+  border-bottom: 4px solid gray;
 `;
 
 const Wrapper = styled.div`
@@ -61,13 +60,16 @@ function Nav() {
     if (Auth.loggedIn()) {
       return (
         <Left>
-          <Link to="/orderHistory">
+          <Link to="/orderHistory" style={{ textDecoration: "none" }}>
             <MenuItem>Order History</MenuItem>
           </Link>
-          <Link to="/">
+          <Link style={{ textDecoration: "none" }}>
             <MenuItem href="/" onClick={() => Auth.logout()}>
               Logout
             </MenuItem>
+          </Link>
+          <Link to="/products" style={{ textDecoration: "none" }}>
+            <MenuItem>Shop Products</MenuItem>
           </Link>
           <Cart />
         </Left>
