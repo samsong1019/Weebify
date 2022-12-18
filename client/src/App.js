@@ -1,19 +1,26 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
-  ApolloProvider,
   ApolloClient,
   InMemoryCache,
+  ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
 import Home from "./pages/Home";
-import Signup from "./pages/Signup";
+import Products from "./pages/Products";
+import Detail from "./pages/Detail";
+import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
-import Product from "./pages/Product";
-import ProductList from "./pages/ProductList";
-import Cart from "./pages/Cart";
+import Signup from "./pages/Signup";
+import Navbar from "./components/Navbar";
+import { StoreProvider } from "./utils/GlobalState";
+import Success from "./pages/Success";
+import OrderHistory from "./pages/OrderHistory";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Announcement from "./components/Announcement";
+import Footer from "./components/Footer";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -36,22 +43,28 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <>
-      <ApolloProvider client={client}>
-        <Router>
-          <div>
+    <ApolloProvider client={client}>
+      <Router>
+        <div>
+          <StoreProvider>
+            <Announcement />
+            <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/products" element={<ProductList />} />
-              <Route path="/product/:id" element={<Product />} />
-              <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/success" element={<Success />} />
+              <Route path="/orderHistory" element={<OrderHistory />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/products/" element={<Products />} />
+              <Route path="/products/:id" element={<Detail />} />
+              <Route path="*" element={<NoMatch />} />
             </Routes>
-          </div>
-        </Router>
-      </ApolloProvider>
-    </>
+            <Footer />
+          </StoreProvider>
+        </div>
+      </Router>
+    </ApolloProvider>
   );
 }
 

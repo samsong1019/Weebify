@@ -1,14 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import styled from "styled-components";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
-import { sliderItems } from "../sliderItems";
-
-// Component styling
+import { sliderItems } from "../../slideData";
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -42,19 +41,21 @@ const Wrapper = styled.div`
 
 const Slide = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   background-color: #${(props) => props.bg};
 `;
 
 const ImageContainer = styled.div`
-  height: 100%;
+  width: 80vw;
+  height: 80vh;
   flex: 1;
 `;
 
 const Image = styled.img`
   height: 80%;
+  margin-left: 10px;
 `;
 
 const InfoContainer = styled.div`
@@ -104,7 +105,9 @@ export default function Slider() {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Description>{item.description}</Description>
-              <Button>Shop Now</Button>
+              <Link to="/products">
+                <Button>Shop Now</Button>
+              </Link>
             </InfoContainer>
           </Slide>
         ))}

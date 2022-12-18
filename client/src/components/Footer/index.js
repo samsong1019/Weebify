@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Facebook,
   Instagram,
@@ -56,12 +57,19 @@ const List = styled.ul`
   padding: 0;
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
 `;
 
 const ListItem = styled.li`
+  margin-left: 80px;
   width: 50%;
   margin-bottom: 10px;
+  color: black;
+
+  :hover {
+    font-weight: bold;
+    color: purple;
+    text-decoration: underline;
+  }
 `;
 
 const Right = styled.div`
@@ -100,17 +108,19 @@ export default function Footer() {
       <Center>
         <Title>Useful Links</Title>
         <List>
-          <ListItem>Home</ListItem>
-          <ListItem>Cart</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Terms</ListItem>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <ListItem>Home</ListItem>
+          </Link>
+          <Link to="/privacy" style={{ textDecoration: "none" }}>
+            <ListItem>Privacy Policy</ListItem>
+          </Link>
         </List>
       </Center>
       <Right>
         <Title>Contact Information</Title>
         <ContactItem>
-          <Room style={{ marginRight: "10px" }} />
-          6 South Weeb Court, Denver,CO, 80219 United States
+          <Room style={{ marginRight: "10px" }} />6 South Weeb Court, Denver,CO,
+          80219 United States
         </ContactItem>
         <ContactItem>
           <Phone style={{ marginRight: "10px" }} />

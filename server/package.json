@@ -4,9 +4,9 @@
   "description": "Weebify is an eCommerce platform designed to offer shoppers a wide selection of anime themed products.",
   "main": "server.js",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "node server.js",
     "watch": "nodemon",
-    "seed": "cd server && npm run seed"
+    "seed": "node config/seeds.js"
   },
   "keywords": [],
   "author": "",

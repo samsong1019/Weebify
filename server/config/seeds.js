@@ -5,11 +5,11 @@ db.once("open", async () => {
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
-    { name: "Funko" },
-    { name: "Figurines" },
-    { name: "Plushies" },
-    { name: "Posters" },
-    { name: "On Sale" },
+    { name: "Funko", image:"https://civilrights.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg" },
+    { name: "Figurines", image:"https://civilrights.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg" },
+    { name: "Plushies", image:"https://civilrights.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg" },
+    { name: "Posters", image:"https://civilrights.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg" },
+    { name: "On Sale", image:"https://civilrights.msu.edu/_assets/images/placeholder/placeholder-200x200.jpg" },
   ]);
 
   console.log("categories seeded");

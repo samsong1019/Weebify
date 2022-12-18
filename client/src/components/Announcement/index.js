@@ -2,11 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  height: 40px;
-  font-size: 14px;
+  height: 30px;
+  font-size: 18px;
   font-weight: bold;
-  background-color: #960000;
-  color: white;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +14,7 @@ const Container = styled.div`
 export default function Announcement() {
   return (
     <Container>
-      🎄🎄 Holiday Savings! Free Priority Shipping on Orders Over $75.00 🎄🎄
+      🎄 Holiday Savings! Free Priority Shipping on Orders Over $50.00 🎄
     </Container>
   );
 }
