@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import Cart from "../Cart";
 
 const Container = styled.div`
-  height: 12vh;
   background: white;
   margin-top: 0.5%;
   border-bottom: 4px solid gray;
