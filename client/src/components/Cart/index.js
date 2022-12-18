@@ -128,15 +128,16 @@ const Button = styled.button`
 
 const LoginPrompt = styled.p`
   margin-top: 15px;
+  text-align: center;
   font-weight: bold;
-  color: purple;
+  color: black;
 `;
 
 const TotalCostText = styled.p`
   margin-top: 25px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
-  color: green;
+  color: darkgreen;
 `;
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
@@ -214,7 +215,7 @@ const Cart = () => {
             {Auth.loggedIn() ? (
               <Button onClick={submitCheckout}>Checkout Now</Button>
             ) : (
-              <LoginPrompt>Please login to checkout</LoginPrompt>
+              <LoginPrompt>Please login to checkout!</LoginPrompt>
             )}
           </div>
         </div>

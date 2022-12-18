@@ -1,6 +1,6 @@
 {
-  "name": "mern-client",
-  "version": "0.1.0",
+  "name": "weebify-app",
+  "version": "1.0.0",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
@@ -20,7 +20,7 @@
     "styled-components": "^5.3.6"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

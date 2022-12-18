@@ -89,11 +89,10 @@ function CategoryMenu() {
   return (
     <ParentContainer>
       {categories.map((item) => (
-        <ChildContainer>
+        <ChildContainer key={item._id}>
           <Image src={item.image} />
           <Info>
             <Button
-              key={item._id}
               onClick={() => {
                 handleClick(item._id);
               }}
