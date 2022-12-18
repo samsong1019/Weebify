@@ -1,35 +1,51 @@
-import { gql } from '@grapghql';
+import { gql } from "@apollo/client";
 
-export const ADD_USER = gql`
-  mutation addUser($username: String!, $firstName: String!, $lastName: String! $email: String!, $password: String!, $isAdmin:Boolean! ) {
-    addProfile(username: $username, firstName: $firstName, lastname: $lastName, email: $email, password: $password, isAdmin: $isAdmin) {
+export const LOGIN = gql`
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
       token
-      profile {
+      user {
         _id
-        name
       }
-    }
-  }
-  `;
-  export const ADD_PRODUCT = gql`
-  mutation addProduct($title: String!, $description: String!, $price: Number, $image: String!, $instock: Boolean) {
-    addProducts(title: $title, description: $description, price: $price, image: $image, inStock: $inStock) {
-      _id
-      title
-      description
-      price
-      image
-      inStock
     }
   }
 `;
 
-export const ADD_CATEGORY = gql`
-mutation addCategory($title: String!,  $image: String!) {
-  addProducts(title: $title, image: $image) {
-    _id
-    title
-    image
+export const ADD_ORDER = gql`
+  mutation addOrder($products: [ID]!) {
+    addOrder(products: $products) {
+      purchaseDate
+      products {
+        _id
+        name
+        description
+        price
+        quantity
+        category {
+          name
+        }
+      }
+    }
   }
-}
+`;
+
+export const ADD_USER = gql`
+  mutation addUser(
+    $firstName: String!
+    $lastName: String!
+    $email: String!
+    $password: String!
+  ) {
+    addUser(
+      firstName: $firstName
+      lastName: $lastName
+      email: $email
+      password: $password
+    ) {
+      token
+      user {
+        _id
+      }
+    }
+  }
 `;
