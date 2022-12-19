@@ -18,5 +18,13 @@
   },
   "devDependencies": {
     "concurrently": "^5.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samsong1019/Weebify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/samsong1019/Weebify/issues"
+  },
+  "homepage": "https://github.com/samsong1019/Weebify#readme"
 }
