@@ -18,6 +18,30 @@ export const SidebarData = [
         icon: <FaIcons.FaCartPlus />,
         cName: 'nav-text'
     },
+      {
+        title: 'Logout',
+        path: '/',
+        icon: <SlIcons.SlLogin />,
+        cName: 'nav-text'
+    },
+        {
+        title: 'OrderHistory',
+        path: '/orderhistory',
+        icon: <AiIcons.AiOutlineHistory />,
+        cName: 'nav-text'
+    },
+    {
+        title: 'Home',
+        path: '/',
+        icon: <AiIcons.AiFillHome />,
+        cName: 'nav-text'
+    },
+    {
+        title: 'Products',
+        path: '/products',
+        icon: <FaIcons.FaCartPlus />,
+        cName: 'nav-text'
+    },
     {
         title: 'SignUp',
         path: '/signup',
@@ -30,11 +54,6 @@ export const SidebarData = [
         icon: <SlIcons.SlLogin />,
         cName: 'nav-text'
     },
-    {
-        title: 'OrderHistory',
-        path: '/orderhistory',
-        icon: <AiIcons.AiOutlineHistory />,
-        cName: 'nav-text'
-    },
+  
 
 ]
