@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Auth from "../../utils/auth";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Cart from "../Cart";
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
+import { SidebarData } from "./SidebarData";
+import './sidebar.css';
+import { IconContext } from "react-icons/lib";
 
 const Container = styled.div`
   background: white;
@@ -54,58 +59,92 @@ const MenuItem = styled.div`
     text-decoration: underline;
   }
 `;
-
 function Nav() {
-  function showNavigation() {
-    if (Auth.loggedIn()) {
-      return (
-        <Left>
-          <Link to="/orderHistory" style={{ textDecoration: "none" }}>
-            <MenuItem>Order History</MenuItem>
-          </Link>
-          <Link style={{ textDecoration: "none" }}>
-            <MenuItem href="/" onClick={() => Auth.logout()}>
-              Logout
-            </MenuItem>
-          </Link>
-          <Link to="/products" style={{ textDecoration: "none" }}>
-            <MenuItem>Shop Products</MenuItem>
-          </Link>
-          <Cart />
-        </Left>
-      );
-    } else {
-      return (
-        <Left>
-          <Link to="/signup" style={{ textDecoration: "none" }}>
-            <MenuItem>Sign-Up</MenuItem>
-          </Link>
-          <Link to="/login" style={{ textDecoration: "none" }}>
-            <MenuItem>Login</MenuItem>
-          </Link>
-          <Link to="/products" style={{ textDecoration: "none" }}>
-            <MenuItem>Shop Products</MenuItem>
-          </Link>
-        </Left>
-      );
-    }
-  }
+  const [sidebar, setSidebar] = useState(false)
 
+  const showSidebar = () => setSidebar(!sidebar)
   return (
-    <Container>
-      <Wrapper>
-        <Left>{showNavigation()}</Left>
-        <Center>
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <Logo>Weebify</Logo>
-          </Link>
-        </Center>
-        <Right>
-          <Cart />
-        </Right>
-      </Wrapper>
-    </Container>
-  );
+    <>
+      <div className="navbar">
+        <Link to="" className="menu-bars">
+          <FaIcons.FaBars onClick={showSidebar} />
+        </Link>
+      </div>
+      <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+        <ul className='nav-menu-items'onClick={showSidebar} >
+          <li className="navbar=toggle">
+            <Link to='#' className="menu-bars">
+              <AiIcons.AiOutlineClose />
+            </Link>
+          </li>
+          {SidebarData.map((item, index) => {
+            return (
+              <li key={index} className={item.cName}>
+                <Link to={item.path}>
+                  {item.icon}
+                  <span>{item.title}</span>
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+      </nav>
+    </>
+  )
 }
+
+
+// function Nav() {
+//   function showNavigation() {
+//     if (Auth.loggedIn()) {
+//       return (
+//         <Left>
+//           <Link to="/orderHistory" style={{ textDecoration: "none" }}>
+//             <MenuItem>Order History</MenuItem>
+//           </Link>
+//           <Link style={{ textDecoration: "none" }}>
+//             <MenuItem href="/" onClick={() => Auth.logout()}>
+//               Logout
+//             </MenuItem>
+//           </Link>
+//           <Link to="/products" style={{ textDecoration: "none" }}>
+//             <MenuItem>Shop Products</MenuItem>
+//           </Link>
+//           <Cart />
+//         </Left>
+//       );
+//     } else {
+//       return (
+//         <Left>
+//           <Link to="/signup" style={{ textDecoration: "none" }}>
+//             <MenuItem>Sign-Up</MenuItem>
+//           </Link>
+//           <Link to="/login" style={{ textDecoration: "none" }}>
+//             <MenuItem>Login</MenuItem>
+//           </Link>
+//           <Link to="/products" style={{ textDecoration: "none" }}>
+//             <MenuItem>Shop Products</MenuItem>
+//           </Link>
+//         </Left>
+//       );
+//     }
+//   }
+
+//   return (
+//     <Container>
+//       <Wrapper>
+//         <Left>{showNavigation()}</Left>
+//         <Center>
+//           <Link to="/" style={{ textDecoration: "none" }}>
+//             <Logo>Weebify</Logo>
+//           </Link>
+//         </Center>
+//         <Right>
+//           <Cart />
+//         </Right>
+//       </Wrapper>
+//     </Container>
+//   );
+// }
 
 export default Nav;
