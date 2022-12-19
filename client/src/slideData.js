@@ -12,7 +12,7 @@ export const sliderItems = [
     image:
       "https://i.postimg.cc/SNL3PN7r/41-Ued-QHwlp-L-fococlipping-standard.png",
     title: "Perfect Plushies",
-    description: "Enjoy Extreme Savings On Our Anime Inspired Plushies",
+    description: "Enjoy Extreme Savings On Our Anime Inspired Plushies!",
     bg: "fcf1ed",
   },
   {

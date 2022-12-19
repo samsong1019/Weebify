@@ -17,7 +17,7 @@ Weebify is an ecommerce application created to provide a quick and intuitive sho
 
 This application is deployed via Heroku and can be accessed via the following URL:
 
-LINK HERE
+https://weebify-ecommerce.herokuapp.com/
 
 - New users can start by creating an account from the homepage. Please note that you can still browse and fill your cart while not logged in, however you will be required to register and or login prior to checking out.
 
